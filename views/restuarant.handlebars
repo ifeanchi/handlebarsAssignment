@@ -1,0 +1,29 @@
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<h2>Restuarant: {{restuarant.name}}</h2>
+				<img class="item-img" src="{{restuarant.image}}" style="width:100%"/>
+				<a class="btn" href="/restuarants">See Restuarant List</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class= "menus">
+	{{#each restuarant.Menus}}
+		<div>
+		  <h4>{{this.title}}</h4>
+		</div>
+		<div>
+			<ul class="list-group list-group-flush">
+				{{#each this.MenuItems}}
+					<li class="list-group-item">{{this.name}} : ${{this.price}}</li>
+				{{/each}}
+			</ul>
+		</div>	        			
+	{{/each}}
+</div>
+
+
+

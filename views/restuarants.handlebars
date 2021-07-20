@@ -1,0 +1,19 @@
+<div>
+	<h2>There are {{restuarants.length}} restuarants</h2>
+</div>
+<div class="container">
+	{{#each restuarants}} 
+		<div class="row">
+			<div class="col-md-8">
+				<div class="thumbnail">
+					<a class="btn" href="/restuarants/{{id}}">
+					<img class="item-img" src="{{image}}" style="width:50%"/>
+					<div class="caption">
+						<h2>{{name}}</h2>
+					</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</div>

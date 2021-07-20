@@ -1,0 +1,13 @@
+body {
+    background-color: green;
+    text-align: center;
+}
+
+.menus {
+    text-align: left;
+}
+
+.container {
+ flex-wrap: wrap;
+ justify-content: space-evenly;
+}
