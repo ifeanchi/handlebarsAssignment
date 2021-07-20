@@ -2,7 +2,7 @@ const db = require('../db');
 const fs = require('fs/promises');
 const path = require('path');
 const initialiseDb = require('../initialiseDb');
-const Restaurant = require('../models/restaurant');
+const Restaurant = require('../models/restuarant');
 const Menu = require('../models/menu');
 const MenuItem = require('../models/menuItem');
 

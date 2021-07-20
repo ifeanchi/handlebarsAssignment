@@ -17,6 +17,7 @@ const port = 3000;
 
 
 app.use(express.static('public'));
+app.use(express.urlencoded());
 
 const handlebars = expressHandlebars({
     handlebars : allowInsecurePrototypeAccess(Handlebars)
@@ -92,6 +93,22 @@ app.patch('/restaurants/:id', async (req, res) => {
     await restaurant.update(req.body);
     res.sendStatus(200);
 });
+
+app.get("/new-restaurant-form", (req, res) => {
+    res.render('newRestuarantForm');
+})
+
+app.post("/new-restuarant", async (req, res) =>{
+    const newRestuarant = await Restaurant.create(req.body);
+    console.log('new Restuarant', newRestuarant);
+    const restuarant = await Restaurant.findByPk(newRestuarant.id)
+    console.log('fo', restuarant);
+    if(restuarant) {
+        res.render('restuarant', {restuarant})
+    } else {
+        console.error('Restuarant not created')
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
